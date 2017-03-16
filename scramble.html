@@ -17,7 +17,7 @@
             // Grab a random word from the WORDS array.
             var max = WORDS.length;
             var min = 0;
-            var random_index = Math.round(Math.random() * (max - min));
+            var random_index = Math.floor(Math.random() * (max - min));
             console.log(random_index);
             var word = WORDS[random_index];
 
@@ -29,10 +29,11 @@
 
             // Prompt the user to guess the original word when given the scrambled word.
             var guess = prompt("Guess the original word");
+        
 
             // If the user guesses wrong, tell them they were wrong and show the right word.
 
-            if (guess.toLowerCase() !== word) {
+            if (guess.toLowerCase().trim() !== word) {
                 alert("You are wrong!");
                 console.log("The right word is " + word);
             }
